@@ -10,17 +10,17 @@ defmodule Maps do
   }
 
   koan "Maps represent structured data, like a person" do
-    assert @person == %{first_name: ___,
+    assert @person == %{first_name: "Jon",
                         last_name: "Snow",
                         age: 27 }
   end
 
   koan "Fetching a value returns a tuple with ok when it exists" do
-    assert Map.fetch(@person, :age) == ___
+    assert Map.fetch(@person, :age) == {:ok, 27}
   end
 
   koan "Or the atom :error when it doesn't" do
-    assert Map.fetch(@person, :family) == ___
+    assert Map.fetch(@person, :family) == :error
   end
 
   koan "Extending a map is as simple as adding a new pair" do
